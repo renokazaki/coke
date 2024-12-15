@@ -1,8 +1,8 @@
 import CanvasContainer from "./components/CanvasContainer";
-import Page1 from "./components/Page/page1";
-import Page2 from "./components/Page/page2";
-import Page3 from "./components/Page/page3";
-import Page4 from "./components/Page/page4";
+import BottomPage from "./components/Page/BottomPage";
+import MainPage from "./components/Page/MainPage";
+import SubMainPage from "./components/Page/SubMainPage";
+import TopPage from "./components/Page/TopPage";
 
 function App() {
   return (
@@ -10,10 +10,10 @@ function App() {
       <div className="h-screen w-full fixed ">
         <CanvasContainer />
       </div>
-      <Page1 />
-      <Page2 />
-      <Page3 />
-      <Page4 />
+      <TopPage />
+      <MainPage />
+      <SubMainPage />
+      <BottomPage />
     </div>
   );
 }

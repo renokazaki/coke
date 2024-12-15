@@ -96,6 +96,22 @@ const Experience = () => {
         },
       });
     }
+
+    //ページ4での処理
+
+    if (model.current) {
+      tl.to(model.current.rotation, {
+        y: 20,
+        duration: 0.6, // スムーズな移動
+        scrollTrigger: {
+          trigger: ".page4", // トリガー要素
+          start: "top bottom", // トリガーが画面に入るタイミング
+          end: "top top", // トリガーが画面上部に到達するタイミング
+          scrub: true, // スムーズスクロール
+          // markers: true, // デバッグ用マーカー
+        },
+      });
+    }
   }, []);
 
   return (
