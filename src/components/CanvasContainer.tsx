@@ -4,7 +4,7 @@ import Experience from "./Experience";
 
 const CanvasContainer = () => {
   return (
-    <Canvas camera={{ position: [7, 0, 10] }}>
+    <Canvas camera={{ position: [2, 0, 5] }}>
       {/* 真っ暗なものにEnviromentを使ってあげると表示される */}
       <Environment preset="city" />
       <Experience />
