@@ -52,8 +52,33 @@ const Experience = () => {
   useEffect(() => {
     // submodelの動作
     if (submodel.current) {
+      tl.to(submodel.current.rotation, {
+        y: 5,
+        z: 1,
+        duration: 0.6, // スムーズな移動
+        scrollTrigger: {
+          trigger: ".page2", // トリガー要素
+          start: "top bottom", // トリガーが画面に入るタイミング
+          end: "top top", // トリガーが画面上部に到達するタイミング
+          scrub: true, // スムーズスクロール
+          // markers: true, // デバッグ用マーカー
+        },
+      });
+
+      tl.to(submodel.current.rotation, {
+        x: 5,
+        duration: 0.6, // スムーズな移動
+        scrollTrigger: {
+          trigger: ".page3", // トリガー要素
+          start: "top bottom", // トリガーが画面に入るタイミング
+          end: "top top", // トリガーが画面上部に到達するタイミング
+          scrub: true, // スムーズスクロール
+          // markers: true, // デバッグ用マーカー
+        },
+      });
+
       tl.to(submodel.current.position, {
-        x: -1.4,
+        x: -1.75,
         y: -1.5,
         z: -1,
         duration: 0.6, // スムーズな移動
@@ -128,7 +153,7 @@ const Experience = () => {
         },
       });
       tl.to(model.current.position, {
-        x: 1.98,
+        x: 1.8,
         y: -1,
         z: 5,
         duration: 0.6, // スムーズな移動
@@ -153,7 +178,7 @@ const Experience = () => {
       });
     }
     tl.to(scene.position, {
-      x: -2.1,
+      x: -2,
       z: -5,
       duration: 0.6, // スムーズな移動
       scrollTrigger: {
