@@ -31,8 +31,8 @@ const Cans = forwardRef<THREE.Group, JSX.IntrinsicElements["group"]>(
     return (
       <group {...props} ref={ref}>
         <group
-          position={[-80.537, 0, 0.242]}
-          rotation={[-Math.PI / 2, 0, 0]}
+          position={[-75.537, 0, 0.242]}
+          rotation={[-Math.PI / 2 + 0.15, 0.03, 0.7]}
           scale={[0.819, 0.819, 1]}
         >
           <mesh
@@ -50,8 +50,8 @@ const Cans = forwardRef<THREE.Group, JSX.IntrinsicElements["group"]>(
         </group>
 
         <group
-          position={[160.983, 0, 0.242]}
-          rotation={[-Math.PI / 2, 0, Math.PI / 4]}
+          position={[180.983, 0, 0.242]}
+          rotation={[-Math.PI / 2 + 0.15, 0, Math.PI / 4 + -0.1]}
           scale={[0.819, 0.819, 1]}
         >
           <mesh

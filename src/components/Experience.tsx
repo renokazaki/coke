@@ -53,8 +53,8 @@ const Experience = () => {
     // submodelの動作
     if (submodel.current) {
       tl.to(submodel.current.rotation, {
-        y: 5,
-        z: 1,
+        x: 5,
+        z: 5,
         duration: 0.6, // スムーズな移動
         scrollTrigger: {
           trigger: ".page2", // トリガー要素
@@ -153,7 +153,7 @@ const Experience = () => {
         },
       });
       tl.to(model.current.position, {
-        x: 1.8,
+        x: 1.95,
         y: -1,
         z: 5,
         duration: 0.6, // スムーズな移動
