@@ -1,5 +1,7 @@
 import { useThree } from "@react-three/fiber";
 import Can from "../../public/model/Can";
+import Cans from "../../public/model/Cans";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,6 +14,8 @@ const Experience = () => {
   const { scene } = useThree();
   // console.log(camera.position);
   const model = useRef<THREE.Group>(null);
+  const submodel = useRef<THREE.Group>(null);
+
   const tl = gsap.timeline();
   gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +50,36 @@ const Experience = () => {
   // });
 
   useEffect(() => {
+    // submodelの動作
+    if (submodel.current) {
+      tl.to(submodel.current.position, {
+        x: -1.4,
+        y: -1.5,
+        z: -1,
+        duration: 0.6, // スムーズな移動
+        scrollTrigger: {
+          trigger: ".page4", // トリガー要素
+          start: "top bottom", // トリガーが画面に入るタイミング
+          end: "top top", // トリガーが画面上部に到達するタイミング
+          scrub: true, // スムーズスクロール
+          // markers: true, // デバッグ用マーカー
+        },
+      });
+      tl.to(submodel.current.rotation, {
+        x: -0.2,
+        y: 0.4,
+        z: 0.1,
+        duration: 0.6, // スムーズな移動
+        scrollTrigger: {
+          trigger: ".page4", // トリガー要素
+          start: "top bottom", // トリガーが画面に入るタイミング
+          end: "top top", // トリガーが画面上部に到達するタイミング
+          scrub: true, // スムーズスクロール
+          // markers: true, // デバッグ用マーカー
+        },
+      });
+    }
+
     // ページ2での処理;
     if (model.current) {
       tl.to(model.current.rotation, {
@@ -94,7 +128,9 @@ const Experience = () => {
         },
       });
       tl.to(model.current.position, {
-        y: -1.3,
+        x: 1.98,
+        y: -1,
+        z: 5,
         duration: 0.6, // スムーズな移動
         scrollTrigger: {
           trigger: ".page4", // トリガー要素
@@ -117,8 +153,8 @@ const Experience = () => {
       });
     }
     tl.to(scene.position, {
-      x: 0.7,
-      z: 2,
+      x: -2.1,
+      z: -5,
       duration: 0.6, // スムーズな移動
       scrollTrigger: {
         trigger: ".page4", // トリガー要素
@@ -133,6 +169,14 @@ const Experience = () => {
   return (
     <>
       <Can rotation={[0, 0, -0.5]} ref={model} />
+      <Cans
+        scale={0.025}
+        rotation-x={-0.5}
+        rotation-z={1}
+        rotation-y={0.5}
+        position={[-5, 2, -8]}
+        ref={submodel}
+      />
     </>
   );
 };

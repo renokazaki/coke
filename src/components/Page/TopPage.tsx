@@ -1,8 +1,8 @@
 const TopPage = () => {
   return (
-    <div className="page1 h-screen bg-red-400 flex justify-center">
-      <div className="bg-slate-200 h-8 w-auto py-4 px-4 rounded-full flex items-center justify-center mt-4">
-        ⇩
+    <div className="page1 h-screen bg-red-400 flex justify-center items-end">
+      <div className="text-[8rem] font-semibold text-red-200 py-4 px-4 mb-32">
+        COKE
       </div>
     </div>
   );
