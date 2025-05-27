@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import CanvasContainer from "./components/CanvasContainer";
 import Header from "./components/Header";
 import BottomPage from "./components/Page/BottomPage";
@@ -10,7 +11,9 @@ function App() {
     <div className="bg-red-700">
       <Header />
       <div className="h-screen w-full fixed ">
-        <CanvasContainer />
+        <Suspense fallback={null}>
+          <CanvasContainer />
+        </Suspense>
       </div>
       <TopPage />
       <MainPage />
